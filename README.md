@@ -1,14 +1,16 @@
 两个工作线程之间的通信：
 使用wait、notify方法实现线程间的通信:
-1.wait和notify必须配合synchronized关键字使用
 
+1.wait和notify必须配合synchronized关键字使用
 2.wait方法释放锁，notify方法不释放锁
 3.当前的线程必须拥有当前对象的monitor，也即lock
 4.要确保调用wait()方法的时候拥有锁，即，wait()方法的调用必须放在synchronized方法或synchronized块中
-总结：ynchronized 只能有一个线程进行执行，这个线程不释放锁的话，其他线程就一直等待。
-好处：解决了多线程的安全问题
-弊端：效率非常低，多个线程需要判断锁，比较消耗资源，抢锁的资源。
 
+总结：ynchronized 只能有一个线程进行执行，这个线程不释放锁的话，其他线程就一直等待。
+
+好处：解决了多线程的安全问题
+
+弊端：效率非常低，多个线程需要判断锁，比较消耗资源，抢锁的资源。
 线程A：
 public class ThreadA extends Thread {
 
